@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Matematika XII — Jelajah Refleksi</title>
+<style>
+:root{color-scheme:light;--ink:#17324d;--teal:#176b78;--teal2:#278b90;--bg:#f3f7fa;--card:#fff;--line:#d8e2e9;--muted:#5c6c7b;--orange:#d97706}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+header{background:linear-gradient(125deg,#123c61,#176b78);color:white;padding:30px max(20px,calc((100% - 1100px)/2))}
+header .eyebrow{font-size:11px;letter-spacing:2px;font-weight:800;opacity:.85}header h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:8px 0}header p{max-width:700px;margin:0;opacity:.92}
+main{max-width:1100px;margin:auto;padding:20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 15px}button{font:inherit;cursor:pointer;border-radius:10px;padding:10px 14px;font-weight:750;border:1px solid var(--line);background:white;color:var(--ink)}button:hover{filter:brightness(.97)}nav button.active,.primary{background:var(--teal);color:white;border-color:var(--teal)}.progress{height:7px;background:#d8e2e9;border-radius:9px;overflow:hidden;margin-bottom:18px}.progress span{display:block;width:20%;height:100%;background:var(--teal2);transition:width .2s}
+.page{display:none}.page.active{display:block}.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px #17324d08}.tag{font-size:11px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--teal2)}h2{font-size:23px;line-height:1.25;margin:4px 0 8px}h3{font-size:16px;margin:0 0 7px}.muted{font-size:14px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}.formula{background:#f5f8fa;border:1px solid var(--line);padding:15px;border-radius:12px}.formula strong{display:block;font-size:19px;margin:7px 0}.formula button{margin-top:5px}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}label.field{display:block;font-size:13px;font-weight:750;margin:9px 0 5px}input[type=number],select{width:100%;padding:11px;border:1px solid #cbd8e1;border-radius:9px;background:white;color:var(--ink);font:inherit}canvas{width:100%;max-width:520px;display:block;margin:auto;border:1px solid var(--line);border-radius:12px;background:#fbfdff}.result{background:#f2f7f8;border:1px solid var(--line);border-radius:10px;padding:13px;margin-top:12px}.question{padding:15px 0;border-bottom:1px solid var(--line)}.option{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px;margin-top:7px;cursor:pointer}.option:has(input:checked){border-color:var(--teal2);background:#eff8f8}.option input{margin-top:5px}.feedback{padding:12px;border-radius:10px;background:#f2f7f8;margin-top:12px}.hide{display:none!important}footer{max-width:1100px;margin:auto;padding:0 20px 25px;color:var(--muted);font-size:12px}
+@media(max-width:600px){main{padding:13px}header{padding:25px 18px}.panel{padding:15px}nav button{flex:1 1 28%;padding:9px 6px;font-size:13px}}
+@media print{nav,.progress,button{display:none!important}.page{display:block!important}.panel{break-inside:avoid}body{background:white}}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">MULTIMEDIA PEMBELAJARAN INTERAKTIF · FASE F</div>
+ <h1>Jelajah Refleksi</h1>
+ <p>MPI Matematika Kelas XII · SMK Negeri 5 Kolaka Utara · Kurikulum Merdeka</p>
+</header>
+<main>
+<nav aria-label="Menu pembelajaran">
+<button class="active" data-page="beranda">⌂ Beranda</button><button data-page="materi">▤ Materi</button><button data-page="simulasi">⌖ Simulasi</button><button data-page="latihan">✎ Latihan</button><button data-page="evaluasi">✓ Evaluasi</button>
+</nav>
+<div class="progress" aria-label="Kemajuan"><span id="progress"></span></div>
+<section class="page active" id="beranda">
+ <div class="panel"><div class="tag">Selamat datang</div><h2>Siap menjelajahi pencerminan?</h2><p class="muted">Refleksi adalah transformasi yang memetakan titik atau bangun ke bayangan terhadap garis cermin. Bentuk dan ukuran tetap, tetapi posisi atau orientasi dapat berubah.</p>
+ <div class="grid" style="margin-top:16px">
+ <div class="formula"><h3>📘 1. Pahami konsep</h3><p class="muted">Pelajari empat aturan refleksi.</p><button class="primary" data-go="materi">Buka materi →</button></div>
+ <div class="formula"><h3>📐 2. Coba simulasi</h3><p class="muted">Ubah titik dan garis cermin, lalu amati bayangannya.</p><button class="primary" data-go="simulasi">Mulai simulasi →</button></div>
+ <div class="formula"><h3>🧩 3. Kerjakan latihan</h3><p class="muted">Periksa jawaban dan baca pembahasannya.</p><button class="primary" data-go="latihan">Mulai latihan →</button></div>
+ <div class="formula"><h3>🏁 4. Uji kemampuan</h3><p class="muted">Kerjakan evaluasi dan lihat nilai otomatis.</p><button class="primary" data-go="evaluasi">Mulai evaluasi →</button></div>
+ </div></div>
+ <div class="panel"><h3>Tujuan pembelajaran</h3><ul class="muted"><li>Menjelaskan konsep refleksi pada bidang koordinat.</li><li>Menggunakan aturan refleksi untuk menentukan bayangan titik.</li><li>Menganalisis perubahan koordinat berdasarkan garis cermin.</li><li>Menyelesaikan masalah refleksi dan memeriksa hasilnya.</li></ul></div>
+</section>
+<section class="page" id="materi">
+ <div class="panel"><div class="tag">Bagian 01</div><h2>Materi: Aturan Refleksi</h2><p class="muted">Untuk titik awal P(x, y), koordinat bayangan P′ ditentukan oleh garis cerminnya.</p>
+ <div class="grid" style="margin-top:14px">
+ <div class="formula"><span class="tag">Cermin sumbu X</span><strong>(x, y) → (x, −y)</strong><p class="muted">Absis tetap, ordinat berubah tanda.</p>Contoh: (3, 2) → (3, −2)</div>
+ <div class="formula"><span class="tag">Cermin sumbu Y</span><strong>(x, y) → (−x, y)</strong><p class="muted">Absis berubah tanda, ordinat tetap.</p>Contoh: (3, 2) → (−3, 2)</div>
+ <div class="formula"><span class="tag">Cermin garis y = x</span><strong>(x, y) → (y, x)</strong><p class="muted">Posisi koordinat ditukar.</p>Contoh: (3, 2) → (2, 3)</div>
+ <div class="formula"><span class="tag">Cermin garis y = −x</span><strong>(x, y) → (−y, −x)</strong><p class="muted">Koordinat ditukar dan kedua tanda berubah.</p>Contoh: (3, 2) → (−2, −3)</div>
+ </div></div>
+ <div class="panel"><h3>Sifat-sifat refleksi</h3><ul class="muted"><li>Jarak titik ke garis cermin sama dengan jarak bayangannya ke garis cermin.</li><li>Panjang ruas garis dan besar sudut tetap.</li><li>Bentuk dan ukuran bangun tidak berubah.</li><li>Titik yang tepat berada pada garis cermin tetap pada posisinya.</li></ul></div>
+ <div class="panel"><h3>Contoh terbimbing</h3><p class="muted">Titik A(4, 3) dicerminkan terhadap sumbu X. Absis tetap 4 dan ordinat 3 berubah menjadi −3.</p><div class="result"><b>Jawaban: A′(4, −3)</b><br>Periksa: absis sama, ordinat berlawanan tanda.</div><button class="primary" data-go="simulasi" style="margin-top:12px">Praktikkan di simulasi →</button></div>
+</section>
+<section class="page" id="simulasi">
+ <div class="panel"><div class="tag">Bagian 02</div><h2>Laboratorium Refleksi</h2><p class="muted">Masukkan koordinat bilangan bulat antara −5 dan 5, pilih garis cermin, lalu tekan “Cerminkan titik”.</p>
+ <div class="row" style="margin-top:12px"><div>
+ <label class="field" for="px">Absis x</label><input id="px" type="number" min="-5" max="5" value="3" step="1">
+ <label class="field" for="py">Ordinat y</label><input id="py" type="number" min="-5" max="5" value="2" step="1">
+ <label class="field" for="axis">Garis cermin</label><select id="axis"><option value="x">Sumbu X</option><option value="y">Sumbu Y</option><option value="yx">Garis y = x</option><option value="ynx">Garis y = −x</option></select>
+ <button class="primary" id="reflect" style="width:100%;margin-top:13px">Cerminkan titik</button><button id="reset" style="width:100%;margin-top:8px">Reset simulasi</button><div class="result" id="simresult">Titik asal P(3, 2). Jalankan simulasi untuk melihat bayangan.</div>
+ </div><div><canvas id="graph" width="500" height="500" role="img" aria-label="Grafik titik asal dan bayangan"></canvas><p class="muted">● P titik asal · ● P′ bayangan · Garis putus-putus jingga menunjukkan garis cermin.</p></div></div></div>
+ <div class="panel"><h3>Tantangan berpikir kritis</h3><p class="muted">Gunakan titik P(4, 2). Prediksi bayangannya terhadap keempat garis cermin sebelum menampilkan jawaban.</p><button id="challenge">Tampilkan jawaban</button><div id="challengeanswer" class="result hide">Sumbu X: (4, −2) · Sumbu Y: (−4, 2) · y = x: (2, 4) · y = −x: (−2, −4)</div></div>
+</section>
+<section class="page" id="latihan">
+ <div class="panel"><div class="tag">Bagian 03</div><h2>Latihan interaktif</h2><p class="muted">Pilih jawaban, periksa, dan pelajari pembahasannya.</p><div id="practice"></div><div id="practicefeedback" class="feedback hide"></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="primary" id="checkpractice">Periksa jawaban</button><button id="nextpractice">Soal berikutnya →</button></div><p class="muted" id="practicecount"></p></div>
+</section>
+<section class="page" id="evaluasi">
+ <div class="panel"><div class="tag">Bagian 04</div><h2>Evaluasi akhir</h2><p class="muted">Jawab semua soal secara mandiri. Nilai dihitung otomatis setelah semua jawaban dikumpulkan.</p><div id="exam"></div><button class="primary" id="submitexam" style="margin-top:16px">Kumpulkan jawaban</button><button id="retryexam" class="hide" style="margin:12px 0 0 8px">Ulangi evaluasi</button><div id="examresult" class="hide"></div></div>
+ <div class="panel"><h3>Refleksi diri</h3><p class="muted">Centang pernyataan sesuai pemahamanmu.</p><label class="option"><input type="checkbox"> Saya dapat menjelaskan aturan refleksi.</label><label class="option"><input type="checkbox"> Saya dapat menghitung koordinat bayangan.</label><label class="option"><input type="checkbox"> Saya dapat memeriksa jawaban melalui grafik.</label></div>
+</section>
+</main>
+<footer>MPI Matematika Kelas XII · Fase F · Materi Refleksi · SMK Negeri 5 Kolaka Utara<br>Berjalan secara lokal/offline setelah file diunduh. Nilai tidak dikirim atau disimpan ke server.</footer>
+<script>
+(function(){
+const $=id=>document.getElementById(id);let visited=new Set(['beranda']),pi=0,submitted=false;
+const practice=[
+{q:'Titik A(4, 3) dicerminkan terhadap sumbu X. Bayangannya adalah …',o:['(−4, 3)','(4, −3)','(−4, −3)','(3, 4)'],a:1,e:'Pada sumbu X, absis tetap dan ordinat berubah tanda: (4, 3) → (4, −3).'},
+{q:'Titik B(−2, 5) dicerminkan terhadap sumbu Y. Bayangannya adalah …',o:['(2, 5)','(−2, −5)','(5, −2)','(2, −5)'],a:0,e:'Pada sumbu Y, absis berubah tanda dan ordinat tetap: (−2, 5) → (2, 5).'},
+{q:'Titik C(3, 2) dicerminkan terhadap garis y = −x. Bayangannya adalah …',o:['(−3, 2)','(2, 3)','(−2, −3)','(3, −2)'],a:2,e:'Aturan y = −x adalah (x, y) → (−y, −x), sehingga (3, 2) → (−2, −3).'}
+];
+const exam=[
+{q:'Bayangan titik P(−3, 4) terhadap sumbu X adalah …',o:['(3, 4)','(−3, −4)','(3, −4)','(4, −3)'],a:1,e:'Sumbu X: (x, y) → (x, −y).'},
+{q:'Titik Q(5, −2) dicerminkan terhadap sumbu Y. Hasilnya …',o:['(−5, −2)','(5, 2)','(−5, 2)','(−2, 5)'],a:0,e:'Sumbu Y: (x, y) → (−x, y).'},
+{q:'Bayangan R(−1, 6) terhadap garis y = x adalah …',o:['(1, −6)','(−1, −6)','(6, −1)','(−6, 1)'],a:2,e:'Garis y = x menukar posisi koordinat: (x, y) → (y, x).'},
+{q:'Titik S(2, −4) dicerminkan terhadap y = −x. Hasilnya …',o:['(−4, 2)','(4, −2)','(−2, 4)','(4, 2)'],a:1,e:'Garis y = −x: (x, y) → (−y, −x), maka (2, −4) → (4, −2).'},
+{q:'Titik yang terletak pada garis cermin akan …',o:['Selalu berpindah 1 satuan','Berubah tanda kedua koordinatnya','Tetap pada posisinya','Berubah menjadi titik asal O'],a:2,e:'Titik yang berada tepat pada garis cermin tidak berubah posisi.'}
+];
+function go(p){document.querySelectorAll('.page').forEach(s=>s.classList.toggle('active',s.id===p));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));visited.add(p);$('progress').style.width=visited.size/5*100+'%';if(p==='simulasi')draw();if(p==='latihan')renderPractice();if(p==='evaluasi')renderExam()}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+function calc(x,y,a){if(a==='x')return[x,-y];if(a==='y')return[-x,y];if(a==='yx')return[y,x];return[-y,-x]}
+function aname(a){return{x:'sumbu X',y:'sumbu Y',yx:'garis y = x',ynx:'garis y = −x'}[a]}
+function draw(){let c=$('graph'),ctx=c.getContext('2d'),w=c.width,h=c.height,pad=38,u=(w-2*pad)/10,ox=w/2,oy=h/2;ctx.clearRect(0,0,w,h);ctx.fillStyle='#fbfdff';ctx.fillRect(0,0,w,h);ctx.font='12px system-ui';ctx.textAlign='center';
+for(let i=-5;i<=5;i++){let xx=ox+i*u,yy=oy-i*u;ctx.beginPath();ctx.strokeStyle=i===0?'#71869a':'#dce4e9';ctx.lineWidth=i===0?2:1;ctx.moveTo(xx,pad);ctx.lineTo(xx,h-pad);ctx.moveTo(pad,yy);ctx.lineTo(w-pad,yy);ctx.stroke();if(i!==0){ctx.fillStyle='#687b89';ctx.fillText(i,xx,oy+15);ctx.fillText(i,ox-12,yy+4)}}
+let x=Number($('px').value)||0,y=Number($('py').value)||0,a=$('axis').value,[bx,by]=calc(x,y,a);ctx.save();ctx.setLineDash([7,5]);ctx.strokeStyle='#d97706';ctx.lineWidth=3;ctx.beginPath();if(a==='x'){ctx.moveTo(pad,oy);ctx.lineTo(w-pad,oy)}else if(a==='y'){ctx.moveTo(ox,pad);ctx.lineTo(ox,h-pad)}else if(a==='yx'){ctx.moveTo(pad,h-pad);ctx.lineTo(w-pad,pad)}else{ctx.moveTo(pad,pad);ctx.lineTo(w-pad,h-pad)}ctx.stroke();ctx.restore();ctx.strokeStyle='#278b90';ctx.lineWidth=2;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(ox+x*u,oy-y*u);ctx.lineTo(ox+bx*u,oy-by*u);ctx.stroke();ctx.setLineDash([]);
+[[x,y,'#176b78','P'],[bx,by,'#db6b31','P′']].forEach(([px,py,col,l])=>{ctx.beginPath();ctx.fillStyle=col;ctx.arc(ox+px*u,oy-py*u,6,0,Math.PI*2);ctx.fill();ctx.font='bold 13px system-ui';ctx.textAlign='left';ctx.fillStyle=col;ctx.fillText(l+'('+px+', '+py+')',ox+px*u+8,oy-py*u-8)});ctx.fillStyle='#687b89';ctx.textAlign='right';ctx.fillText('x',w-pad+2,oy-9);ctx.textAlign='left';ctx.fillText('y',ox+9,pad+2)}
+function reflect(){let x=Number($('px').value),y=Number($('py').value),a=$('axis').value;if(!Number.isInteger(x)||!Number.isInteger(y)||x < -5||x>5||y < -5||y>5){$('simresult').textContent='Masukkan bilangan bulat antara −5 dan 5 untuk x dan y.';return}let [bx,by]=calc(x,y,a);$('simresult').innerHTML='<b>Hasil pencerminan</b><br>Titik asal: P('+x+', '+y+')<br>Garis cermin: '+aname(a)+'<br>Bayangan: <b>P′('+bx+', '+by+')</b><br><span class="muted">Cocokkan hasil dengan rumus refleksi.</span>';draw()}
+$('reflect').onclick=reflect;['px','py','axis'].forEach(id=>$(id).addEventListener('input',draw));$('reset').onclick=()=>{$('px').value=3;$('py').value=2;$('axis').value='x';$('simresult').textContent='Simulasi direset. Titik asal P(3, 2).';draw()};$('challenge').onclick=()=>$('challengeanswer').classList.toggle('hide');
+function renderPractice(){let q=practice[pi];$('practice').innerHTML='<h3>Soal '+(pi+1)+' dari '+practice.length+'</h3><p>'+q.q+'</p>'+q.o.map((v,i)=>'<label class="option"><input type="radio" name="pa" value="'+i+'"><span>'+String.fromCharCode(65+i)+'. '+v+'</span></label>').join('');$('practicefeedback').classList.add('hide');$('practicecount').textContent='Soal latihan '+(pi+1)+'/'+practice.length}
+$('checkpractice').onclick=()=>{let q=practice[pi],sel=document.querySelector('input[name="pa"]:checked'),f=$('practicefeedback');f.classList.remove('hide');if(!sel){f.textContent='Pilih jawaban terlebih dahulu.';return}let ok=Number(sel.value)===q.a;f.style.background=ok?'#e7f6ec':'#fff4e5';f.innerHTML='<b>'+(ok?'Benar!':'Belum tepat.')+'</b><br>'+q.e};$('nextpractice').onclick=()=>{pi=(pi+1)%practice.length;renderPractice()};
+function renderExam(){if(submitted)return;$('exam').innerHTML=exam.map((q,i)=>'<div class="question"><h3>Soal '+(i+1)+'</h3><p>'+q.q+'</p>'+q.o.map((v,j)=>'<label class="option"><input type="radio" name="ea'+i+'" value="'+j+'"><span>'+String.fromCharCode(65+j)+'. '+v+'</span></label>').join('')+'</div>').join('')}
+$('submitexam').onclick=()=>{let unanswered=exam.filter((q,i)=>!document.querySelector('input[name="ea'+i+'"]:checked')).length;if(unanswered){$('examresult').classList.remove('hide');$('examresult').innerHTML='<div class="result">Masih ada <b>'+unanswered+' soal</b> yang belum dijawab. Lengkapi semua soal dahulu.</div>';return}let score=0,detail=exam.map((q,i)=>{let v=Number(document.querySelector('input[name="ea'+i+'"]:checked').value),ok=v===q.a;if(ok)score++;return'<div class="question"><b>Soal '+(i+1)+': '+(ok?'Benar':'Perlu diperbaiki')+'</b><p class="muted">'+q.e+'</p></div>'});let n=score/exam.length*100;submitted=true;$('examresult').classList.remove('hide');$('examresult').innerHTML='<div class="result"><div class="tag">Nilai akhir</div><div style="font-size:42px;font-weight:850">'+n+'</div><b>'+score+' dari '+exam.length+' jawaban benar</b><p>'+(n>=80?'Sangat baik! Pertahankan pemahamanmu.':n>=60?'Cukup baik. Pelajari kembali jawaban yang belum tepat.':'Tetap semangat. Ulangi materi lalu coba lagi.')+'</p><span class="muted">Nilai = jumlah benar ÷ 5 × 100. Hasil hanya ditampilkan di perangkat ini.</span></div><h3 style="margin-top:15px">Pembahasan</h3>'+detail.join('');$('submitexam').classList.add('hide');$('retryexam').classList.remove('hide')};
+$('retryexam').onclick=()=>{submitted=false;$('examresult').classList.add('hide');$('submitexam').classList.remove('hide');$('retryexam').classList.add('hide');renderExam()};
+draw();renderPractice();renderExam();
+})();
+</script>
+</body></html>
